@@ -8,7 +8,7 @@
     <select name="jenik_kelamin">
         <option value="">Pilih Jenis Kelamin</option>
         <option value="L">Laki-laki</option>
-        <option value="p">Perempuan</option>
+        <option value="P">Perempuan</option>
     </select> <br>
     <textarea name="alamat"cols="30" rows="10"></textarea> <br>
     <input type="submit" name="submit" value="Save">

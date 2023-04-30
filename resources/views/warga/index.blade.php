@@ -8,6 +8,7 @@
         <th>NO KK</th>
         <th>JENIS KELAMIN</th>
         <th>ALAMAT</th>
+        <th>AKSI</th>
     </tr>
     
     @foreach ($warga as $w)     
@@ -18,6 +19,7 @@
          <td>{{ $w->no_kk }}</td>
          <td>{{ $w->jenik_kelamin }}</td>
          <td>{{ $w->alamat }}</td>
+         <td><a href="/warga/{{ $w->id }}/edit">Edit</a></td>
     </tr>
     @endforeach
 </table>
