@@ -12,4 +12,10 @@ class Warga extends Model
     // sehingga yang di table itu ada tambahan 's'
     // dan jika menggunakan bahasa indonesia nama table dan model itu disamakan dan perlu ada tambahan kodingan dibawah ini
     protected $table = 'warga';
+
+    // data yang boleh dimasukan secara masal itu apa aja menggunakan code dibawah ini
+    // protected $fillable = ['nama', 'nik'];
+
+    // kebalikan nya
+    protected $guarded = [];
 }

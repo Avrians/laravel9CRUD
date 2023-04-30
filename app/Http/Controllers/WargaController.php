@@ -11,4 +11,17 @@ class WargaController extends Controller
         $warga = Warga::all();
         return view('warga.index', compact('warga'));
     }
+
+    public function create(){
+        return view('warga.create');
+    }
+
+    public function store(Request $request)
+    {
+        // mengambil semua data termasuk token dan tombol submit
+        // untuk mengecualikan data tersebut bisa menggunakan perintah dibawah ini 
+        // dd($request->except('_token', 'submit'));
+        Warga::create($request->except(['_token', 'submit']));
+        return redirect('/warga');
+    }
 }

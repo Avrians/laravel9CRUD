@@ -1,3 +1,5 @@
+<a href="/warga/create">Ada Warga</a> <br> <br>
+
 <table>
      <tr>
         <th>NO</th>
