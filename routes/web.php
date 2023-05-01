@@ -1,7 +1,10 @@
 <?php
 
-use App\Http\Controllers\WargaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WargaController;
+
+// biar ngga eror di import ini 
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,13 +21,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about', function () {
-    return view('about');
+Route::middleware(['auth'])->group(function(){
+    Route::get('/warga',[WargaController::class, 'index']);
+    Route::get('/warga/create',[WargaController::class, 'create']);
+    Route::post('/warga/store',[WargaController::class, 'store']);
+    Route::get('/warga/{id}/edit',[WargaController::class, 'edit']);
+    Route::put('/warga/{id}',[WargaController::class, 'update']);
+    Route::delete('/warga/{id}',[WargaController::class, 'destroy']);
 });
 
-Route::get('/warga',[WargaController::class, 'index']);
-Route::get('/warga/create',[WargaController::class, 'create']);
-Route::post('/warga/store',[WargaController::class, 'store']);
-Route::get('/warga/{id}/edit',[WargaController::class, 'edit']);
-Route::put('/warga/{id}',[WargaController::class, 'update']);
-Route::delete('/warga/{id}',[WargaController::class, 'destroy']);
+
+// Auth::routes();
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
